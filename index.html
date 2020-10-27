@@ -7,81 +7,123 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>More Information</title>
 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Compiled and minified Google Materialize CDN CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
+        <div id="contactForm">
 
-        <div class="row">
-            <form class="col s12">
+            <div class="row">
 
-                <div class="row">
-                    <div class="input-field col s12" id="degreeType">
-                        <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                        <label>Select</label>
-                    </div>
-                </div>
+                <form class="col s10 offset-s1">
 
-                <div class="row">
-                    <div class="input-field col s12" id="studyField">
-                        <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                        <label>Select degree type above</label>
-                    </div>
-                </div>
+                    <h3>Request More Information</h3>
 
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">First Name</label>
+                    <div class="row">
+                        <div class="input-field col s10" id="degreeType">
+                            <select>
+                                <option value="" disabled selected>Select</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                            <label>What degree type would you like?</label>
+                        </div>
                     </div>
 
-                    <div class="input-field col s12 m6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
+                    <div class="row">
+                        <div class="input-field col s10" id="studyField">
+                            <select>
+                                <option value="" disabled selected>Select degree type above</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                            <label>What would you like to study?</label>
+                        </div>
                     </div>
-                </div>
 
+                    <div class="row">
+                        <div class="input-field col s10 m5">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">First Name</label>
+                        </div>
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <div class="input-field col s10 m5">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="phone" type="tel" class="validate">
-                        <label for="phone">Telephone</label>
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="address" type="text" class="validate">
-                        <label for="address">Address</label>
+
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input id="phone" type="tel" class="validate">
+                            <label for="phone">Telephone</label>
+                        </div>
                     </div>
-                </div>
 
-            </form>
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input id="address" type="text" class="validate">
+                            <label for="address">Enter a location</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <button class="btn-large waves-effect waves-light" type="submit" name="action">Tell Me More
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <p>By submitting contact information through this form, I agree that Liberty University and
+                                its
+                                affiliates may call and/or text me about its offerings by any phone number I have
+                                provided
+                                and may provide in the future, including any wireless number, using automated
+                                technology.<br>
+                                Message and data rates may apply. For additional information, text HELP to 49595 or
+                                49596.
+                                You may opt out at any time by sending STOP to 49595 or 49596. Visit for <a>Terms &
+                                    Conditions</a> and <a>Privacy Policy</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s10">
+                            OR
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <a class="waves-effect waves-light btn-large">Apply Now</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="javascript.js" type="text/javascript"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="javascript.js" type="text/javascript"></script>
 </body>
+
 </html>
