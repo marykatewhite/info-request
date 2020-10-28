@@ -7,6 +7,7 @@ function validateForm() {
   var lastName = document.forms["contactInputs"]["last_name"].value;
   var email = document.forms["contactInputs"]["email"].value;
   var phone = document.forms["contactInputs"]["phone"].value;
+  var address = document.forms["contactInputs"]["address"].value;
 
   if (firstName == "") {
     alert("Please enter a first name.");
@@ -34,6 +35,12 @@ function validateForm() {
     return phoneFormat.test(phone);
   }
   validatePhone(phone);
+
+  function validateAddress(address) {
+    var addressFormat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    return addressFormat.test(address);
+  }
+  validateAddress(address);
 
   //   alert("validation complete");
 }

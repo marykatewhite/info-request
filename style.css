@@ -6,6 +6,69 @@ body {
 
 #contactForm {
     background-color: white;
-    padding-top: 10px;
+    padding-top: 20px;
     margin-top: 10vh;
+}
+
+#finePrint {
+    font-size: 8pt;
+    color: lightslategray;
+}
+
+#degreeTitle {
+    font-size: 14pt;
+    color: black;
+}
+
+#fieldTitle {
+    font-size: 14pt;
+    color: black;
+}
+
+.disabledSelect {
+    padding-top: 8px;
+    color: grey;
+    font-size: 10pt;
+}
+
+.decorated{
+    overflow: hidden;
+    text-align: center;
+}
+
+.decorated > span{
+   position: relative;
+   display: inline-block;
+}
+
+.decorated > span:before, .decorated > span:after{
+   content: '';
+   position: absolute;
+   top: 50%;
+   border-bottom: 2px solid lightgray;
+   width: 100vw;
+   margin: 0 20px;
+}
+
+.decorated > span:before{
+   right: 100%;
+}
+
+.decorated > span:after{
+   left: 100%;
+}
+
+button {
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+
+#tellMeMore {
+    height: 80px;
+    background-color: blue;
+}
+
+#applyNow {
+    height: 80px;
 }

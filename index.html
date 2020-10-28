@@ -21,43 +21,43 @@
 
             <div class="row">
 
-                <form class="col s10 offset-s1" id="contactInputs" onsubmit="return validateForm()">
+                <form class="col s10 m6 offset-s1 offset-m3" id="contactInputs" onsubmit="return validateForm()">
 
-                    <h3>Request More Information</h3>
+                    <h4>Request More Information</h4>
 
                     <div class="row">
-                        <div class="input-field col s10" id="degreeType">
+                        <div class="input-field col s12" id="degreeType">
                             <select>
-                                <option value="" disabled selected>Select</option>
+                                <option class="disabledSelect" value="" disabled selected>Select</option>
                                 <option value="1">Associate</option>
                                 <option value="2">Bachelor's</option>
                                 <option value="3">Master's</option>
                                 <option value="4">Postgraduate</option>
                                 <option value="5">Doctoral</option>
                             </select>
-                            <label>What degree type would you like?</label>
+                            <label id="degreeTitle">What degree type would you like?</label>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s10" id="studyField">
+                        <div class="input-field col s12" id="studyField">
                             <select>
                                 <option value="" disabled selected>Select degree type above</option>
                                 <option value="1">Option 1</option>
                                 <option value="2">Option 2</option>
                                 <option value="3">Option 3</option>
                             </select>
-                            <label>What would you like to study?</label>
+                            <label id="fieldTitle">What would you like to study?</label>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s10 m5">
+                        <div class="input-field col s12 m6">
                             <input id="first_name" type="text" class="validate">
                             <label for="first_name">First Name</label>
                         </div>
 
-                        <div class="input-field col s10 m5">
+                        <div class="input-field col s12 m6">
                             <input id="last_name" type="text" class="validate">
                             <label for="last_name">Last Name</label>
                         </div>
@@ -65,7 +65,7 @@
 
 
                     <div class="row">
-                        <div class="input-field col s10">
+                        <div class="input-field col s12">
                             <input id="email" type="email" class="validate">
                             <label for="email">Email</label>
                         </div>
@@ -73,29 +73,29 @@
 
 
                     <div class="row">
-                        <div class="input-field col s10">
+                        <div class="input-field col s12">
                             <input id="phone" type="tel" class="validate">
                             <label for="phone">Telephone</label>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s10">
+                        <div class="input-field col s12">
                             <input id="address" type="text" class="validate">
                             <label for="address">Enter a location</label>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s10">
-                            <button class="btn-large waves-effect waves-light" type="submit" name="action">Tell Me More
+                        <div class="input-field col s12">
+                            <button id="tellMeMore" class="btn-large waves-effect waves-light center-align" type="submit" name="action">Tell Me More
                             </button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s10">
-                            <p>By submitting contact information through this form, I agree that Liberty University and
+                        <div class="input-field col s12">
+                            <p id="finePrint">By submitting contact information through this form, I agree that Liberty University and
                                 its
                                 affiliates may call and/or text me about its offerings by any phone number I have
                                 provided
@@ -109,14 +109,14 @@
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s10">
-                            OR
+                        <div class="input-field col s12 center-align">
+                            <h6 class="decorated"><span>OR</span></h6>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s10">
-                            <a class="waves-effect waves-light btn-large">Apply Now</a>
+                        <div class="input-field col s12 center">
+                            <button id="applyNow" class="waves-effect waves-light btn-large">Apply Now</button>
                         </div>
                     </div>
                 </form>
