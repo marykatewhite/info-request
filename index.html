@@ -82,20 +82,22 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="address" type="text" class="validate">
-                            <label for="address">Enter a location</label>
+                            <label for="address">Address</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <button id="tellMeMore" class="btn-large waves-effect waves-light center-align" type="submit" name="action">Tell Me More
+                            <button id="tellMeMore" class="btn-large waves-effect waves-light center-align"
+                                type="submit" name="action">Tell Me More
                             </button>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <p id="finePrint">By submitting contact information through this form, I agree that Liberty University and
+                            <p id="finePrint">By submitting contact information through this form, I agree that Liberty
+                                University and
                                 its
                                 affiliates may call and/or text me about its offerings by any phone number I have
                                 provided
@@ -125,7 +127,13 @@
     </div>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>document
+            .getElementById("contactInputs")
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
+            });</script>
     <script src="javascript.js" type="text/javascript"></script>
+
 </body>
 
 </html>

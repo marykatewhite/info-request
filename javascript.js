@@ -1,6 +1,8 @@
 M.AutoInit();
 
-var instance = M.FormSelect.getInstance(elem);
+var addressValidator = require("address-validator");
+var Address = addressValidator.Address;
+var _ = require("underscore");
 
 function validateForm() {
   var firstName = document.forms["contactInputs"]["first_name"].value;
@@ -12,11 +14,15 @@ function validateForm() {
   if (firstName == "") {
     alert("Please enter a first name.");
     return false;
+  } else {
+    console.log(firstName);
   }
 
   if (lastName == "") {
     alert("Please enter a last name.");
     return false;
+  } else {
+    console.log(lastName);
   }
 
   function validateEmail(email) {
@@ -29,39 +35,43 @@ function validateForm() {
     }
   }
   validateEmail(email);
+  console.log(email);
 
   function validatePhone(phone) {
-    var phoneFormat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-    return phoneFormat.test(phone);
+    if (phone == "") {
+      alert("Please enter a valid phone number.");
+      return false;
+    } else {
+      var phoneFormat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+      return phoneFormat.test(phone);
+    }
   }
   validatePhone(phone);
+  console.log(phone);
 
-  function validateAddress(address) {
-    var addressFormat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-    return addressFormat.test(address);
-  }
-  validateAddress(address);
+  addressValidator.validate(
+    address,
+    addressValidator.match.streetAddress,
+    function(err, exact, inexact) {
+      console.log("input: ", address.toString());
+      console.log(
+        "match: ",
+        _.map(exact, function(a) {
+          return a.toString();
+        })
+      );
+      console.log(
+        "did you mean: ",
+        _.map(inexact, function(a) {
+          return a.toString();
+        })
+      );
 
-  //   alert("validation complete");
+      //access some props on the exact match
+      var first = exact[0];
+      console.log(first.streetNumber + " " + first.street);
+    }
+  );
+  console.log(address);
+  alert("validation complete");
 }
-
-//degreeType
-//select
-
-//studyField
-//select
-
-//first_name X
-//text
-
-//last_name X
-//text
-
-//email X
-//email
-
-//phone X
-//tel
-
-//address X
-//text
