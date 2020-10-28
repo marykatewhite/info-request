@@ -4,11 +4,27 @@ var addressValidator = require("address-validator");
 var _ = require("underscore");
 
 function validateForm() {
+  var degree = document.forms["contactInputs"]["degreeType"].value;
+  var field = document.forms["contactInputs"]["studyField"].value;
   var firstName = document.forms["contactInputs"]["first_name"].value;
   var lastName = document.forms["contactInputs"]["last_name"].value;
   var email = document.forms["contactInputs"]["email"].value;
   var phone = document.forms["contactInputs"]["phone"].value;
   var address = document.forms["contactInputs"]["address"].value;
+
+  if (degree == "") {
+    alert("Please select a degree type.");
+    return false;
+  } else {
+    console.log(degree);
+  }
+
+  if (field == "") {
+    alert("Please select a field of study.");
+    return false;
+  } else {
+    console.log(field);
+  }
 
   if (firstName == "") {
     alert("Please enter a first name.");
