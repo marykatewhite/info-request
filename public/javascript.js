@@ -1,18 +1,27 @@
 M.AutoInit();
 
-var addressValidator = require("address-validator");
-var _ = require("underscore");
-
 function validateForm() {
-  // var degreeList = document.forms["contactInputs"]["degreeType"];
-  // var fieldList = document.forms["contactInputs"]["studyField"];
-  // var degree = degreeList.options[degreeList.selectedIndex].text;
-  // var field = fieldList.options[fieldList.selectedIndex].text;
+  var degree = document.forms["contactInputs"]["degreeType"].value;
+  var field = document.forms["contactInputs"]["studyField"].text;
   var firstName = document.forms["contactInputs"]["first_name"].value;
   var lastName = document.forms["contactInputs"]["last_name"].value;
   var email = document.forms["contactInputs"]["email"].value;
   var phone = document.forms["contactInputs"]["phone"].value;
   var address = document.forms["contactInputs"]["address"].value;
+
+  if (degree == "Select") {
+    alert("Please choose a degree.");
+    return false;
+  } else {
+    console.log(degree);
+  }
+
+  if (field == "Select a degree type above") {
+    alert("Please choose a field of study.");
+    return false;
+  } else {
+    console.log(field);
+  }
 
   if (firstName == "") {
     alert("Please enter a first name.");
@@ -52,25 +61,15 @@ function validateForm() {
   validatePhone(phone);
   console.log(phone);
 
-  addressValidator.validate(
-    address,
-    addressValidator.match.streetAddress,
-    function(err, exact, inexact) {
-      console.log("input: ", address.toString());
-      console.log(
-        "match: ",
-        _.map(exact, function(a) {
-          return a.toString();
-        })
-      );
-      console.log(
-        "did you mean: ",
-        _.map(inexact, function(a) {
-          return a.toString();
-        })
-      );
+  function validateAddress(address) {
+    var regex = /[,#-\/\s\!\@\$.....]/gi;
+    if (regex.test(address)) {
+      console.log(address);
+      return true;
+    } else {
+      return false;
     }
-  );
-  console.log(address);
+  }
+  validateAddress(address)
   alert("validation complete");
 }
