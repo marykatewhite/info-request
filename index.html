@@ -21,7 +21,7 @@
 
             <div class="row">
 
-                <form class="col s10 offset-s1">
+                <form class="col s10 offset-s1" id="contactInputs" onsubmit="return validateForm()">
 
                     <h3>Request More Information</h3>
 
@@ -29,9 +29,11 @@
                         <div class="input-field col s10" id="degreeType">
                             <select>
                                 <option value="" disabled selected>Select</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="1">Associate</option>
+                                <option value="2">Bachelor's</option>
+                                <option value="3">Master's</option>
+                                <option value="4">Postgraduate</option>
+                                <option value="5">Doctoral</option>
                             </select>
                             <label>What degree type would you like?</label>
                         </div>
@@ -51,8 +53,8 @@
 
                     <div class="row">
                         <div class="input-field col s10 m5">
-                            <input id="last_name" type="text" class="validate">
-                            <label for="last_name">First Name</label>
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
                         </div>
 
                         <div class="input-field col s10 m5">
