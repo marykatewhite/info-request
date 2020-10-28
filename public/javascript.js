@@ -1,7 +1,6 @@
 M.AutoInit();
 
 var addressValidator = require("address-validator");
-var Address = addressValidator.Address;
 var _ = require("underscore");
 
 function validateForm() {
@@ -66,10 +65,6 @@ function validateForm() {
           return a.toString();
         })
       );
-
-      //access some props on the exact match
-      var first = exact[0];
-      console.log(first.streetNumber + " " + first.street);
     }
   );
   console.log(address);
