@@ -14,7 +14,6 @@ $(document).ready(function() {
 });
 
 function validateForm() {
-  var validationFailed = false;
   var formResults = {};
 
   var degree =
@@ -52,12 +51,15 @@ function validateForm() {
   }
 
   function validateEmail(email) {
+    var emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (email == "" || email == "undefined") {
       alert("Please enter a valid email address.");
       return false;
+    } else if (email.match(emailFormat)) {
+      return true
     } else {
-      const emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return emailFormat.test(String(email).toLowerCase());
+      alert("Please enter a valid email address.");
+      return false;
     }
   }
   validateEmail(email);
