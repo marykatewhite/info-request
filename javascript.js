@@ -15,6 +15,8 @@ $(document).ready(function(){
 
 
 function validateForm() {
+  var formResults = {};
+
   var degree = document.forms["contactInputs"]["degreeType"][document.forms["contactInputs"]["degreeType"].selectedIndex].text;
   var field = document.forms["contactInputs"]["studyField"][document.forms["contactInputs"]["studyField"].selectedIndex].text;
   var firstName = document.forms["contactInputs"]["first_name"].value;
@@ -85,5 +87,16 @@ function validateForm() {
     }
   }
   validateAddress(address)
+
+  formResults = {
+    "degree": degree,
+    "field": field,
+    "name": firstName + " " + lastName,
+    "email": email,
+    "telephone": phone,
+    "address": address
+  };
+  console.log(formResults);
+
   alert("validation complete");
 }
