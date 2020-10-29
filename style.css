@@ -72,3 +72,7 @@ button {
 #applyNow {
     height: 80px;
 }
+
+#addressLink {
+    font-size: 9pt;
+}
