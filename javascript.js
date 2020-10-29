@@ -63,7 +63,6 @@ function validateForm() {
     }
   }
   validateEmail(email);
-  console.log(email);
 
   function validatePhone(phone) {
     var phoneFormat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
