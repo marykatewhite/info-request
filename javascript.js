@@ -1,7 +1,21 @@
 M.AutoInit();
 
+var studies = $("#studyField option").clone();
+
+$(document).ready(function(){
+  $('#studyField').formSelect();
+
+  $("#degreeType").change(function() {
+    $("#studyField").formSelect("destroy");
+    $("#studyField option").remove();
+    $("#studyField").append(studies.filter('.'+this.value));
+    $("#studyField").formSelect();
+  })
+})
+
+
 function validateForm() {
-  var degree = document.forms["contactInputs"]["degreeType"].value;
+  var degree = document.forms["contactInputs"]["degreeType"][document.forms["contactInputs"]["degreeType"].selectedIndex].text;
   var field = document.forms["contactInputs"]["studyField"][document.forms["contactInputs"]["studyField"].selectedIndex].text;
   var firstName = document.forms["contactInputs"]["first_name"].value;
   var lastName = document.forms["contactInputs"]["last_name"].value;
