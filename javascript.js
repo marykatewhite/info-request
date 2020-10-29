@@ -2,7 +2,7 @@ M.AutoInit();
 
 function validateForm() {
   var degree = document.forms["contactInputs"]["degreeType"].value;
-  var field = document.forms["contactInputs"]["studyField"].text;
+  var field = document.forms["contactInputs"]["studyField"][document.forms["contactInputs"]["studyField"].selectedIndex].text;
   var firstName = document.forms["contactInputs"]["first_name"].value;
   var lastName = document.forms["contactInputs"]["last_name"].value;
   var email = document.forms["contactInputs"]["email"].value;
