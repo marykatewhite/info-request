@@ -2,23 +2,29 @@ M.AutoInit();
 
 var studies = $("#studyField option").clone();
 
-$(document).ready(function(){
-  $('#studyField').formSelect();
+$(document).ready(function() {
+  $("#studyField").formSelect();
 
   $("#degreeType").change(function() {
     $("#studyField").formSelect("destroy");
     $("#studyField option").remove();
-    $("#studyField").append(studies.filter('.'+this.value));
+    $("#studyField").append(studies.filter("." + this.value));
     $("#studyField").formSelect();
-  })
-})
-
+  });
+});
 
 function validateForm() {
+  var validationFailed = false;
   var formResults = {};
 
-  var degree = document.forms["contactInputs"]["degreeType"][document.forms["contactInputs"]["degreeType"].selectedIndex].text;
-  var field = document.forms["contactInputs"]["studyField"][document.forms["contactInputs"]["studyField"].selectedIndex].text;
+  var degree =
+    document.forms["contactInputs"]["degreeType"][
+      document.forms["contactInputs"]["degreeType"].selectedIndex
+    ].text;
+  var field =
+    document.forms["contactInputs"]["studyField"][
+      document.forms["contactInputs"]["studyField"].selectedIndex
+    ].text;
   var firstName = document.forms["contactInputs"]["first_name"].value;
   var lastName = document.forms["contactInputs"]["last_name"].value;
   var email = document.forms["contactInputs"]["email"].value;
@@ -28,33 +34,25 @@ function validateForm() {
   if (degree == "Select") {
     alert("Please choose a degree.");
     return false;
-  } else {
-    console.log(degree);
   }
 
   if (field == "Select a degree type above") {
     alert("Please choose a field of study.");
     return false;
-  } else {
-    console.log(field);
   }
 
   if (firstName == "") {
     alert("Please enter a first name.");
     return false;
-  } else {
-    console.log(firstName);
   }
 
   if (lastName == "") {
     alert("Please enter a last name.");
     return false;
-  } else {
-    console.log(lastName);
   }
 
   function validateEmail(email) {
-    if (email == "") {
+    if (email == "" || email == "undefined") {
       alert("Please enter a valid email address.");
       return false;
     } else {
@@ -66,36 +64,30 @@ function validateForm() {
   console.log(email);
 
   function validatePhone(phone) {
-    if (phone == "") {
+    var phoneFormat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    if (phone == "" || phone == "undefined") {
       alert("Please enter a valid phone number.");
       return false;
+    } else if (phone.match(phoneFormat)) {
+      {
+        return true;
+      }
     } else {
-      var phoneFormat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-      return phoneFormat.test(phone);
+      alert("Please enter a valid phone number.");
+      return false;
     }
   }
   validatePhone(phone);
-  console.log(phone);
-
-  function validateAddress(address) {
-    var regex = /[,#-\/\s\!\@\$.....]/gi;
-    if (regex.test(address)) {
-      console.log(address);
-      return true;
-    } else {
-      return false;
-    }
-  }
-  validateAddress(address)
 
   formResults = {
-    "degree": degree,
-    "field": field,
-    "name": firstName + " " + lastName,
-    "email": email,
-    "telephone": phone,
-    "address": address
+    degree: degree,
+    field: field,
+    name: firstName + " " + lastName,
+    email: email,
+    telephone: phone,
+    address: address
   };
+
   console.log(formResults);
 
   alert("validation complete");
